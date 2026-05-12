@@ -13,14 +13,40 @@
 
     <nav>
         <h2>Carpooling App</h2>
-
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Register</a></li>
-        </ul>
-    </nav>
+            <li>
+                <a href="/">Home</a>
+            </li>
 
+            {% if session.get('user_id') %}
+
+                <li>
+                    <a href="/dashboard">Dashboard</a>
+                </li>
+
+                <li>
+                    <a href="/profile">Profile</a>
+                </li>
+
+                <li>
+                    <a href="/logout">Logout</a>
+                </li>
+
+            {% else %}
+
+                <li>
+                    <a href="/login">Login</a>
+                </li>
+
+                <li>
+                    <a href="/register">Register</a>
+                </li>
+
+            {% endif %}
+
+        </ul>
+
+    </nav>
 
     <main>
         {% block content %}
