@@ -12,22 +12,62 @@ Dashboard
         Welcome {{ session['user_name'] }}
     </h1>
 
+
     <div class="dashboard-cards">
 
-        <div class="card">
-            <h2>Search Rides</h2>
-            <p>Find nearby rides instantly.</p>
-        </div>
 
-        <div class="card">
-            <h2>My Bookings</h2>
-            <p>View your booked rides.</p>
-        </div>
+        {% if session['user_role'] == 'driver' %}
 
-        <div class="card">
-            <h2>Profile</h2>
-            <p>Manage your account.</p>
-        </div>
+            <a href="/create-ride" class="dashboard-link">
+
+                <div class="card">
+                    <h2>Create Ride</h2>
+                    <p>Create a new ride for passengers.</p>
+                </div>
+
+            </a>
+
+
+            <a href="/my-rides" class="dashboard-link">
+
+                <div class="card">
+                    <h2>My Rides</h2>
+                    <p>Manage your rides.</p>
+                </div>
+
+            </a>
+
+        {% endif %}
+
+
+        <a href="/rides" class="dashboard-link">
+
+            <div class="card">
+                <h2>Search Rides</h2>
+                <p>Find available rides nearby.</p>
+            </div>
+
+        </a>
+
+
+        <a href="/my-bookings" class="dashboard-link">
+
+            <div class="card">
+                <h2>My Bookings</h2>
+                <p>View your booked rides.</p>
+            </div>
+
+        </a>
+
+
+        <a href="/profile" class="dashboard-link">
+
+            <div class="card">
+                <h2>Profile</h2>
+                <p>Manage your profile.</p>
+            </div>
+
+        </a>
 
     </div>
 

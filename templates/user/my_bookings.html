@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+My Bookings
+{% endblock %}
+
+{% block content %}
+
+<div class="rides-container">
+
+    <h1>My Bookings</h1>
+
+
+    {% for booking in bookings %}
+
+        <div class="ride-card">
+
+            <h2>
+                Booking ID: {{ booking.id }}
+            </h2>
+
+            <p>
+                Ride ID: {{ booking.ride_id }}
+            </p>
+
+            <p>
+                Status: {{ booking.booking_status }}
+            </p>
+
+        </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+My Rides
+{% endblock %}
+
+{% block content %}
+
+<div class="rides-container">
+
+    <h1>My Created Rides</h1>
+
+    <div class="ride-grid">
+
+        {% for ride in rides %}
+
+            <div class="ride-card">
+
+                <h2>
+                    {{ ride.pickup_location }}
+                    →
+                    {{ ride.destination }}
+                </h2>
+
+                <p>
+                    <strong>Departure:</strong>
+                    {{ ride.departure_time }}
+                </p>
+
+                <p>
+                    <strong>Seats:</strong>
+                    {{ ride.available_seats }}
+                </p>
+
+                <p>
+                    <strong>Fare:</strong>
+                    Rs. {{ ride.fare }}
+                </p>
+
+            </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

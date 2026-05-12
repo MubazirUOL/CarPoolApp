@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Create Ride
+{% endblock %}
+
+{% block content %}
+
+<div class="auth-container">
+
+    <form method="POST" class="auth-form">
+
+        <h2>Create Ride</h2>
+
+        <input type="text"
+               name="pickup_location"
+               placeholder="Pickup Location"
+               required>
+
+
+        <input type="text"
+               name="destination"
+               placeholder="Destination"
+               required>
+
+
+        <input type="datetime-local"
+               name="departure_time"
+               required>
+
+
+        <input type="number"
+               name="available_seats"
+               placeholder="Available Seats"
+               required>
+
+
+        <input type="number"
+               step="0.01"
+               name="fare"
+               placeholder="Fare"
+               required>
+
+
+        <button type="submit">
+            Create Ride
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

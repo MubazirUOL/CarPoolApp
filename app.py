@@ -3,9 +3,12 @@ from flask import render_template, request
 from config import Config
 from database.db import db
 from routes.auth_routes import auth
+from routes.ride_routes import ride
 from flask import session
 from utils.decorators import login_required
 from models.user_model import User
+from models.ride_model import Ride
+from models.booking_model import Booking
 
 app = Flask(__name__)
 
@@ -13,6 +16,7 @@ app.config.from_object(Config)
 db.init_app(app)
 
 app.register_blueprint(auth)
+app.register_blueprint(ride)
 
 @app.route('/')
 def home():
